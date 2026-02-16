@@ -1,0 +1,249 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+form {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+strong,
+em {
+  font-weight: inherit;
+  font-style: inherit;
+}
+
+hr {
+  border: none;
+  margin: 0;
+}
+
+iframe {
+  border: none;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  margin: 0;
+}
+
+details {
+  margin: 0;
+}
+
+summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+dialog {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+progress {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+meter {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+mark {
+  background: none;
+  color: inherit;
+}
+
+time {
+  font-style: normal;
+}
+
+ruby {
+  font-size: inherit;
+}
+
+rt {
+  font-size: smaller;
+  line-height: 1;
+}
+
+bdi,
+bdo {
+  unicode-bidi: normal;
+}
+
+wbr {
+  display: inline;
+}
+
+data {
+  font-style: normal;
+}
+
+output {
+  display: inline;
+}
+
+template {
+  display: none;
+}
+
+slot {
+  display: contents;
+}
+
+portal {
+  display: block;
+}
+
+:focus {
+  outline: none;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1;
+  font-family: sans-serif;
+}
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+::selection {
+  background: transparent;
+  color: inherit;
+}
+
+::-moz-selection {
+  background: transparent;
+  color: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  @page {
+    margin: 0.5in;
+  }
+}

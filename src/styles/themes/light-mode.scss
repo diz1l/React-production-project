@@ -1,0 +1,11 @@
+.app.light-mode {
+    --bg-color: #e8e8ea;
+    --primary-color: #041c65;
+    --secondary-color: #0449e0;
+    --text-color: #1a1a1a;
+}
+
+body.light-mode {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
