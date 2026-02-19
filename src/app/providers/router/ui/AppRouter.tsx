@@ -5,7 +5,7 @@ import cls from "./AppRouter.module.scss";
 
 const AppRouter = () => {
   return (
-    <div>
+    <div className={cls.pageWrapper}>
       <Suspense fallback={<div className={cls.Loading}>Loading...</div>}>
         <Routes>
           {Object.entries(routeConfig).map(([routeKey, { path, element }]) => (

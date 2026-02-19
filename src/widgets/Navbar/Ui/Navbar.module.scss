@@ -3,18 +3,43 @@
 	position: fixed;
 	left: 0;
 	top: 0;
-	height: 100vh;
-	width: 220px;
+	right: 0;
+	height: 64px;
 	display: flex;
-	flex-direction: column;
-	gap: 12px;
-	padding: 20px;
+	align-items: center;
+	gap: 20px;
+	padding: 0 28px;
 	background: var(--inverted-bg-color);
-	box-shadow: 2px 0 8px rgba(0,0,0,0.12);
-	align-items: flex-start;
-	overflow-y: auto;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 	z-index: 1000;
 	transition: background-color var(--theme-trans), color var(--theme-trans), box-shadow var(--theme-trans);
 }
+
+.logo {
+	width: 44px;
+	height: 44px;
+	border-radius: 8px;
+	background: var(--primary-color);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--primary-contrast);
+	font-weight: 700;
+}
+
+.navItems {
+	display: flex;
+	gap: 12px;
+	margin-left: auto;
+	align-items: center;
+}
+
+.navItem {
+	padding: 8px 14px;
+	border-radius: 8px;
+	transition: background-color var(--theme-trans), color var(--theme-trans), transform 120ms ease;
+}
+
+/* spacer removed; layout handled by margin-left:auto on .navItems */
 
 

@@ -7,5 +7,18 @@
     color: var(--primary-color);
 
     min-height: 100vh;
-    transition: background-color var(--theme-trans), color var(--theme-trans);
+        transition: background-color var(--theme-trans), color var(--theme-trans);
+
+        padding-top: 64px;
+}
+
+.content-page {
+    display: flex;
+}   
+
+
+@media (max-width: 768px) {
+    .app {
+        padding-top: 72px;
+    }
 }
