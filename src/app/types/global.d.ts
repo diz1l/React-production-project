@@ -22,3 +22,5 @@ declare module "*.jpg" {
     const contentJPG: any;
     export default contentJPG;
 }
+
+declare const __IS_DEV__: boolean;

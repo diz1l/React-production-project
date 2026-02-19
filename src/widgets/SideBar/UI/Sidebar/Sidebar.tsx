@@ -2,6 +2,7 @@ import { classNames } from "@/shared/lib";
 import classes from "./Sidebar.module.scss";
 import { FC, useState } from "react";
 import { ButtonEl } from "@/shared/UI";
+import { ButtonTheme } from "@/shared/UI/Button/Ui/ButtonEl";
 
 interface SidebarProps {
   className?: string;
@@ -23,7 +24,14 @@ export const Sidebar: FC<SidebarProps> = (props) => {
         [className],
       )}
     >
-      <ButtonEl onClick={toggleSidebar}>Toggle</ButtonEl>
+      <ButtonEl
+        theme={ButtonTheme.CLEAR}
+        className={classes.toggle}
+        onClick={toggleSidebar}
+        aria-label="toggle-sidebar"
+      >
+        ☰
+      </ButtonEl>
     </div>
   );
 };

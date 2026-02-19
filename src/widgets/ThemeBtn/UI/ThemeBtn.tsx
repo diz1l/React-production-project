@@ -2,7 +2,7 @@ import { classNames } from "@/shared/lib";
 import classes from "./Theme.module.scss";
 import { useTheme } from "@/app/providers/ThemeProvider";
 import { Theme } from "@/app/providers/ThemeProvider/UI/ThemeContext";
-import { ButtonEl } from "../../Button";
+import { ButtonEl } from "../../../shared/UI/Button";
 
 interface ThemeBtnProps {
   className?: string;

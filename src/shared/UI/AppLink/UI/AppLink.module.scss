@@ -4,8 +4,8 @@
   font-weight: 600;
   padding: 8px 12px;
   border-radius: 6px;
-  border: 2px solid var(--inverted-text-color);
-  transition: background-color var(--theme-trans), color var(--theme-trans), border-color var(--theme-trans);
+  border: 1px solid rgba(10,102,194,0.08);
+  transition: background-color var(--theme-trans), color var(--theme-trans), border-color var(--theme-trans), box-shadow var(--theme-trans);
   display: block;
   width: 100%;
 }

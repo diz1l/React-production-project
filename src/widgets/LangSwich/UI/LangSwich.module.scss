@@ -1,0 +1,30 @@
+
+.root {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 8px 12px;
+}
+
+.row {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.title {
+	margin: 0;
+	font-size: 14px;
+	color: #222;
+	font-weight: 600;
+}
+
+.actions {
+	display: flex;
+	align-items: center;
+}
+
+.btn {
+	padding: 6px 10px;
+	font-size: 13px;
+}
