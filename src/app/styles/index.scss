@@ -4,7 +4,9 @@
     font: var(--font-m);
 
     background: var(--bg-color);
+    
     color: var(--primary-color);
+
 
     min-height: 100vh;
         transition: background-color var(--theme-trans), color var(--theme-trans);
@@ -15,7 +17,6 @@
 .content-page {
     display: flex;
 }   
-
 
 @media (max-width: 768px) {
     .app {
