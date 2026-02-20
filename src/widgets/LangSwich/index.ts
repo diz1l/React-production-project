@@ -1,3 +1,3 @@
-import { LangSwich } from "./UI/LangSwich";
+import { LangSwich } from './UI/LangSwich';
 
 export { LangSwich };

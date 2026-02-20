@@ -1,5 +1,5 @@
-import {ButtonEl} from "./Ui/ButtonEl";
+import { ButtonEl } from './Ui/ButtonEl';
 
 export {
-  ButtonEl,
-}
+    ButtonEl,
+};

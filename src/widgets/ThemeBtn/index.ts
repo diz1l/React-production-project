@@ -1,3 +1,3 @@
-import { ThemeBtn } from "./UI/ThemeBtn";
+import { ThemeBtn } from './UI/ThemeBtn';
 
 export { ThemeBtn };

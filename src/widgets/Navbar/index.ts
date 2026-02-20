@@ -1,5 +1,5 @@
-import { Navbar } from "./Ui/Navbar";
+import { Navbar } from './Ui/Navbar';
 
 export {
-    Navbar
-}
+    Navbar,
+};

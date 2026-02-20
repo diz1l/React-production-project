@@ -1,5 +1,5 @@
-import { AppLink } from "./UI/AppLink";
+import { AppLink } from './UI/AppLink';
 
 export {
     AppLink,
-}
+};
