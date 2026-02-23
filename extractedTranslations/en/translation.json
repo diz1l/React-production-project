@@ -1,7 +1,14 @@
 {
+  "Go to main page": "Go to main page",
   "Page not found": "Page not found",
+  "Throw error": "Throw error",
   "Translation / Перевод": "Translation / Перевод",
   "about": "about",
+  "error": {
+    "back": "back",
+    "message": "message",
+    "title": "title"
+  },
   "main": "main",
   "p1": "p1",
   "p2": "p2",

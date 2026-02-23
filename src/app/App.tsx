@@ -1,12 +1,16 @@
 import './styles/index.scss';
 import { AppRouter } from 'app/providers/router';
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { classNames } from 'shared/lib';
 import { Navbar, Sidebar } from 'widgets';
 
 export default function App() {
     const { theme } = useTheme();
+
+    // useEffect(() => {
+    //     throw new Error();
+    // }, []);
 
     return (
         <div className={classNames('app', {}, [theme])}>

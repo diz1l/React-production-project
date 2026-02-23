@@ -10,5 +10,8 @@
     "Light": "Light",
     "Dark": "Dark",
     "Page not found": "Page not found",
-    "Go to main page": "Go to main page"
+    "Go to main page": "Go to main page",
+    "error.title": "Error",
+    "error.message": "Something went wrong. Please try refreshing the page or come back later.",
+    "Throw error": "Throw error"
 }
