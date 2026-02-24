@@ -1,5 +1,5 @@
-import { ErrorPage } from '@/widgets/ErrorPage';
-import { PageLoader } from '@/widgets/PageLoader';
+import { ErrorPage } from 'widgets/ErrorPage';
+import { PageLoader } from 'widgets/PageLoader';
 import React, { Component, ErrorInfo, Suspense } from 'react';
 
 interface ErrorBoundaryProps {

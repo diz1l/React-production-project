@@ -1,4 +1,4 @@
-import { ButtonEl } from '@/shared/UI';
+import { ButtonEl } from 'shared/UI';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 

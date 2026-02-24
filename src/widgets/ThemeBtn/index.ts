@@ -1,3 +1,3 @@
-import { ThemeBtn } from './UI/ThemeBtn';
+import { ThemeSwitcher } from './UI/ThemeSwitcher';
 
-export { ThemeBtn };
+export { ThemeSwitcher };

@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import classes from './LangSwich.module.scss';
-import { ButtonEl } from '@/shared/UI';
-import { ButtonTheme } from '@/shared/UI/Button/Ui/ButtonEl';
+import { ButtonEl } from 'shared/UI';
+import { ButtonTheme } from 'shared/UI/Button/Ui/ButtonEl';
 
 export function LangSwich() {
     const { t, i18n } = useTranslation();

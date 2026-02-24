@@ -1,38 +1,26 @@
 {
-    "compilerOptions": {
-        "outDir": "./dist/",
-        "noImplicitAny": true,
-        "module": "ESNext",
-        "target": "es5",
-        "jsx": "react-jsx",
-        // Enable the following to allow importing modules using absolute paths.
-        "baseUrl": ".",
-        "paths": {
-            "@/*": [
-                "./src/*"
-            ],
-            "@": [
-                "./src"
-            ],
-            "*": [
-                "./src/*"
-            ]
-        },
-        "allowJs": false,
-        "moduleResolution": "node",
-        "types": [
-            "node",
-            "jest",
-            "react"
-        ],
-        // Enable the following options to allow default imports from modules with no default export.
-        "esModuleInterop": true,
-        // Allow synthetic default imports from modules with no default export. This does not affect code emit, just typechecking.
-        "allowSyntheticDefaultImports": true
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "module": "ESNext",
+    "target": "es5",
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
     },
-    "ts-node": {
-        "compilerOptions": {
-            "module": "CommonJS"
-        }
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
     }
+  },
+  "include": [
+    "./src",
+    "./config/jest/setupTests.ts"
+  ]
 }

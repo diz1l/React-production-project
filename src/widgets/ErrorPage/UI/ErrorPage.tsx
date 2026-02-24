@@ -1,7 +1,7 @@
-import { classNames } from "@/shared/lib";
+import { classNames } from "shared/lib";
 import { useTranslation } from "react-i18next";
 import styles from './ErrorPage.module.scss';
-import { ButtonEl } from "@/shared/UI";
+import { ButtonEl } from "shared/UI";
 
 interface ErrorPageProps {
     className?: string;

@@ -1,8 +1,8 @@
 import { FC, useState } from 'react';
-import { classNames } from '@/shared/lib';
+import { classNames } from 'shared/lib';
 import classes from './Sidebar.module.scss';
-import { ButtonEl } from '@/shared/UI';
-import { ButtonTheme } from '@/shared/UI/Button/Ui/ButtonEl';
+import { ButtonEl } from 'shared/UI';
+import { ButtonTheme } from 'shared/UI/Button/Ui/ButtonEl';
 
 interface SidebarProps {
   className?: string;
@@ -18,6 +18,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
 
     return (
         <div
+            data-testid="sidebar"
             className={classNames(
                 classes.sidebar,
                 { [classes.collapsed]: collapsed },
@@ -25,6 +26,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
             )}
         >
             <ButtonEl
+                data-testid="toggle-button"
                 theme={ButtonTheme.CLEAR}
                 className={classes.toggle}
                 onClick={toggleSidebar}
