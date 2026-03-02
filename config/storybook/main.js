@@ -1,4 +1,8 @@
-import { resolve } from 'path';
+import { resolve, dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const config = {
     stories: [
@@ -26,8 +30,13 @@ const config = {
         cfg.resolve.extensions.push('.ts', '.tsx');
 
         cfg.resolve.alias = cfg.resolve.alias || {};
-        cfg.resolve.alias.shared = resolve(__dirname, '..', '..', 'src', 'shared');
+        cfg.resolve.alias['@'] = resolve(__dirname, '..', '..', 'src');
         cfg.resolve.alias.app = resolve(__dirname, '..', '..', 'src', 'app');
+        cfg.resolve.alias.shared = resolve(__dirname, '..', '..', 'src', 'shared');
+        cfg.resolve.alias.entities = resolve(__dirname, '..', '..', 'src', 'entities');
+        cfg.resolve.alias.features = resolve(__dirname, '..', '..', 'src', 'features');
+        cfg.resolve.alias.widgets = resolve(__dirname, '..', '..', 'src', 'widgets');
+        cfg.resolve.alias.pages = resolve(__dirname, '..', '..', 'src', 'pages');
 
         if (cfg.module?.rules) {
             cfg.module.rules = cfg.module.rules.map((rule) => {

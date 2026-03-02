@@ -27,6 +27,20 @@ module.exports = {
         react: {
             version: 'detect',
         },
+        'import/resolver': {
+            alias: {
+                map: [
+                    ['@', './src'],
+                    ['app', './src/app'],
+                    ['shared', './src/shared'],
+                    ['entities', './src/entities'],
+                    ['features', './src/features'],
+                    ['widgets', './src/widgets'],
+                    ['pages', './src/pages'],
+                ],
+                extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
+            },
+        },
     },
     rules: {
         'react/jsx-indent': ['error', 4],
@@ -53,7 +67,7 @@ module.exports = {
         '@typescript-eslint/no-shadow': 'off',
         'no-undef': 'off',
         'no-underscore-dangle': ['error', {
-            allow: ['__IS_DEV__'],
+            allow: ['__IS_DEV__', '__dirname', '__filename'],
         }],
         'react/function-component-definition': 'off',
         'react/require-default-props': 'off',
@@ -74,6 +88,14 @@ module.exports = {
             files: ['config/**/*.ts', 'webpack.config.ts', 'jest.config.ts'],
             rules: {
                 'func-names': 'off',
+                'import/no-extraneous-dependencies': 'off',
+            },
+        },
+        {
+            files: ['config/storybook/*.js', 'config/storybook/**/*.js'],
+            rules: {
+                'no-underscore-dangle': 'off',
+                'linebreak-style': 'off',
                 'import/no-extraneous-dependencies': 'off',
             },
         },
