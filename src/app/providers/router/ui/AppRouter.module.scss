@@ -1,5 +1,7 @@
 .page-wrapper {
   flex-grow: 1;
-  padding: 24px;
-  background: var(--bg-color);
+  padding: var(--spacing-l);
+  background: var(--color-background);
+  transition: background-color var(--theme-trans);
+  min-height: calc(100vh - var(--navbar-height));
 }

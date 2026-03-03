@@ -2,19 +2,19 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 8px 12px;
+  padding: var(--spacing-s) var(--spacing-m);
 }
 
 .row {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--spacing-m);
 }
 
 .title {
   margin: 0;
-  font-size: 14px;
-  color: #222;
+  font-size: var(--font-size-s);
+  color: var(--color-text-primary);
   font-weight: 600;
 }
 
@@ -25,5 +25,10 @@
 
 .btn {
   padding: 6px 10px;
-  font-size: 13px;
+  font-size: var(--font-size-s);
+  color: var(--color-text-secondary);
+}
+
+.btn:hover {
+  color: var(--color-text-primary);
 }

@@ -10,6 +10,8 @@ i18n
     .use(initReactI18next)
     .init({
         fallbackLng: 'en',
+        ns: ['translation', 'nav'],
+        defaultNS: 'translation',
         debug: !!((typeof __IS_DEV__ !== 'undefined' ? __IS_DEV__
             : process.env.NODE_ENV !== 'production')),
         interpolation: {

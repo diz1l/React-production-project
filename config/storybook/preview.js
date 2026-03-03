@@ -18,7 +18,7 @@ const preview = {
             </BrowserRouter>
         ),
         (Story) => (
-            <div className="app dark-mode">
+            <div className="app light-mode">
                 <Story />
             </div>
         ),

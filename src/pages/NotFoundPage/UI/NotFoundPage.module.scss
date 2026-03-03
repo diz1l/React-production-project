@@ -1,23 +1,27 @@
-.not-found-page {
+.notFoundPage {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 80vh;
-  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
-  font: var(--font-h1);
-  color: var(--color-text);
-  border-radius: 24px;
-  box-shadow: 0 8px 32px rgb(60 60 90 / 12%);
-  border: 1px solid #e0e7ef;
-  margin: 32px;
-  animation: fade-in 1s ease;
-  font-size: 2.5rem;
+  min-height: 70vh;
+  background: var(--color-surface);
+  font-size: var(--font-size-xl);
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-l);
+  box-shadow: var(--shadow-m);
+  border: 1px solid var(--color-border);
+  margin: var(--spacing-xl);
+  animation: fade-in 0.6s ease;
+  transition:
+    background-color var(--theme-trans),
+    color var(--theme-trans),
+    border-color var(--theme-trans),
+    box-shadow var(--theme-trans);
 }
 
 @keyframes fade-in {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(12px);
   }
 
   to {
@@ -27,10 +31,10 @@
 }
 
 @media (max-width: 600px) {
-  .not-found-page {
-    font-size: 1.5rem;
-    margin: 8px;
-    border-radius: 12px;
+  .notFoundPage {
+    font-size: var(--font-size-l);
+    margin: var(--spacing-s);
+    border-radius: var(--radius-m);
     min-height: 60vh;
   }
 }

@@ -1,31 +1,26 @@
 {
-  "name": "production_project",
+  "name": "production-project",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --env port=3000",
-    "build:prod": "webpack --env mode=production",
-    "build:dev": "webpack --env mode=development",
+    "build:prod": "webpack  --env mode=production",
+    "build:dev": "webpack  --env mode=development",
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
-    "lint:style": "npx stylelint \"**/*.{css,scss}\"",
-    "lint:style:fix": "npx stylelint \"**/*.{css,scss}\" --fix",
-    "lint:scss": "npx stylelint \"**/*.{css,scss}\"",
-    "unit": "jest --config ./config/jest/jest.config.ts",
+    "lint:scss": "npx stylelint \"**/*.scss\"",
+    "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
-    "test:ui:ci": "echo 'Screenshot testing not configured yet'",
+    "test:ui": "npx loki test",
+    "test:ui:ok": "npx loki approve",
+    "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
-    "build-storybook": "storybook build -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook"
   },
-
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "overrides": {
-    "@webpack-cli/serve": "1.6.1"
-  },
   "devDependencies": {
     "@babel/core": "^7.29.0",
     "@babel/preset-env": "^7.23.0",
@@ -64,7 +59,7 @@
     "eslint-plugin-react-hooks": "4.3.0",
     "eslint-plugin-storybook": "^10.2.13",
     "file-loader": "6.2.0",
-    "html-webpack-plugin": "5.5.0",
+    "html-webpack-plugin": "^5.5.0",
     "husky": "7.0.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "^29.5.0",

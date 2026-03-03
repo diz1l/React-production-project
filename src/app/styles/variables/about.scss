@@ -1,16 +1,17 @@
 .about {
-  padding: 20px;
-  max-width: 600px;
+  padding: var(--spacing-l);
+  max-width: 680px;
   margin: 0 auto;
-  font-family: Arial, sans-serif;
 }
 
 .about-title {
-  color: var(--primary-color);
-  margin-bottom: 10px;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-m);
 }
 
 .about-text {
-  line-height: 1.6;
-  color: var(--text-color);
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-m);
 }

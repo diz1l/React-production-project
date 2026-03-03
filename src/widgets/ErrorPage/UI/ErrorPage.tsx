@@ -16,9 +16,18 @@ export function ErrorPage({ className }: ErrorPageProps) {
 
     return (
         <div className={classNames(styles.errorPage, {}, [className])}>
-            <h1 className={styles.title}>{t('error.title')}</h1>
-            <p className={styles.message}>{t('error.message')}</p>
-            <ButtonEl type="button" onClick={reloadPage}>{t('Go to main page')}</ButtonEl>
+            <div className={styles.card}>
+                <div className={styles.icon}>!</div>
+                <h1 className={styles.title}>{t('error.title')}</h1>
+                <p className={styles.message}>{t('error.message')}</p>
+                <ButtonEl
+                    className={styles.button}
+                    type="button"
+                    onClick={reloadPage}
+                >
+                    {t('Go to main page')}
+                </ButtonEl>
+            </div>
         </div>
     );
 }

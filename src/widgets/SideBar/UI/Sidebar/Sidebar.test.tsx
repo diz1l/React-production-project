@@ -1,15 +1,24 @@
 import { screen } from '@testing-library/react';
-import { renderWithTranslation } from 'shared/tests';
+import { MemoryRouter } from 'react-router-dom';
+import renderWithTranslation from 'shared/tests/renderWithTranslation/renderWithTranslation';
 import Sidebar from './Sidebar';
 
 describe('Sidebar', () => {
     test('should render', () => {
-        renderWithTranslation(<Sidebar />);
+        renderWithTranslation(
+            <MemoryRouter>
+                <Sidebar />
+            </MemoryRouter>,
+        );
         expect(screen.getByTestId('sidebar')).toBeInTheDocument();
     });
 
     test('test toggle', () => {
-        renderWithTranslation(<Sidebar />);
+        renderWithTranslation(
+            <MemoryRouter>
+                <Sidebar />
+            </MemoryRouter>,
+        );
         const toggleBtn = screen.getByTestId('toggle-button');
         expect(toggleBtn).toBeInTheDocument();
         toggleBtn.click();

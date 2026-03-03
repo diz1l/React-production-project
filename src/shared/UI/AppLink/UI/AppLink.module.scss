@@ -1,37 +1,43 @@
 .app-link {
-  color: var(--inverted-text-color);
+  color: var(--color-text-secondary);
   text-decoration: none;
-  font-weight: 600;
-  padding: 8px 12px;
-  border-radius: 6px;
-  border: 1px solid rgb(10 102 194 / 8%);
+  font-weight: 500;
+  padding: var(--spacing-s) 12px;
+  border-radius: var(--radius-s);
+  border: 1px solid transparent;
   transition:
     background-color var(--theme-trans),
     color var(--theme-trans),
-    border-color var(--theme-trans),
-    box-shadow var(--theme-trans);
+    border-color var(--theme-trans);
   display: block;
   width: 100%;
 }
 
 .app-link:hover {
-  color: var(--text-color);
-  background: var(--bg-color);
+  color: var(--color-text-primary);
+  background: var(--color-surface-hover);
 }
 
 .app-link:active {
-  color: var(--text-color);
-  background: var(--primary-color);
+  background: var(--color-surface-active);
 }
 
 .primary {
-  color: var(--primary-color);
+  color: var(--color-primary);
+}
+
+.primary:hover {
+  color: var(--color-primary-hover);
 }
 
 .secondary {
-  color: var(--secondary-color);
+  color: var(--color-secondary);
+}
+
+.secondary:hover {
+  color: var(--color-secondary-hover);
 }
 
 .red {
-  color: red;
+  color: var(--color-error);
 }
