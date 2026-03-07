@@ -1,9 +1,12 @@
-import { FC } from 'react';
+import { FC, useCallback, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib';
-import { useTheme, Theme } from 'app/providers/ThemeProvider';
+import { Theme, useTheme } from 'app/providers/ThemeProvider';
 import logoOfWeb from 'shared/img/logoOfWeb.png';
+import { Modal } from 'shared/UI/Modal';
+import { ButtonEl } from 'shared/UI';
+import { ButtonTheme } from 'shared/UI/Button/Ui/ButtonEl';
 import classes from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -12,11 +15,16 @@ interface NavbarProps {
 
 export const Navbar: FC<NavbarProps> = ({ className }) => {
     const { theme, toggleTheme } = useTheme();
-    const { i18n } = useTranslation();
+    const { t, i18n } = useTranslation();
+    const [isAuthModal, setIsAuthModal] = useState(false);
 
     const toggleLanguage = () => {
         i18n.changeLanguage(i18n.language === 'en' ? 'ru' : 'en');
     };
+
+    const toggleAuthModal = useCallback(() => {
+        setIsAuthModal((prev) => !prev);
+    }, []);
 
     return (
         <header className={classNames(classes.navbar, {}, [className])}>
@@ -28,8 +36,20 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
 
             <div className={classes.spacer} />
 
+            <ButtonEl
+                theme={ButtonTheme.OUTLINE}
+                type="button"
+                onClick={toggleAuthModal}
+            >
+                {t('Login')}
+            </ButtonEl>
+
+            <Modal isOpen={isAuthModal} isClose={toggleAuthModal}>
+                <h1>Modal</h1>
+            </Modal>
+
             <div className={classes.utilities}>
-                <button
+                <ButtonEl
                     type="button"
                     className={classes.utilityBtn}
                     onClick={toggleLanguage}
@@ -40,9 +60,9 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
                     <span className={classes.utilityLabel}>
                         {i18n.language === 'en' ? 'RU' : 'EN'}
                     </span>
-                </button>
+                </ButtonEl>
 
-                <button
+                <ButtonEl
                     type="button"
                     className={classes.utilityBtn}
                     onClick={toggleTheme}
@@ -52,7 +72,7 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
                     <span className={classes.utilityIcon}>
                         {theme === Theme.LIGHT ? '🌙' : '☀️'}
                     </span>
-                </button>
+                </ButtonEl>
             </div>
         </header>
     );

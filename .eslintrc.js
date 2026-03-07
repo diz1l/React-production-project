@@ -22,6 +22,7 @@ module.exports = {
     plugins: [
         'react',
         '@typescript-eslint',
+        'react-hooks',
     ],
     settings: {
         react: {
@@ -74,8 +75,14 @@ module.exports = {
         'react/prop-types': 'off',
         'react/react-in-jsx-scope': 'off',
         'react/jsx-props-no-spreading': 'off',
+        'react/button-has-type': 'off',
+        'no-trailing-spaces': 'off',
+        'jsx-a11y/no-static-element-interactions': 'off',
+        'jsx-a11y/click-events-have-key-events': 'off',
         'max-len': ['error', { ignoreComments: true, code: 120 }],
         'arrow-body-style': 'off',
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'error',
     },
     overrides: [
         {

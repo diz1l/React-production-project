@@ -3,7 +3,8 @@
 // Inspired by LinkedIn / Apple Music light modes
 // ============================================================
 
-.app.light-mode {
+.app.light-mode,
+body.light-mode {
   // Surfaces
   --color-background: #f4f2ee;
   --color-surface: #ffffff;

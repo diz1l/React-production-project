@@ -3,7 +3,8 @@
 // Inspired by Spotify / LinkedIn / Apple Music dark modes
 // ============================================================
 
-.app.dark-mode {
+.app.dark-mode,
+body.dark-mode {
   // Surfaces (layered — no pure #000)
   --color-background: #1b1f23;
   --color-surface: #242930;
