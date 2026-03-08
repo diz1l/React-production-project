@@ -8,7 +8,7 @@ module.exports = {
         'node_modules/**',
     ],
     globals: {
-        __IS_DEV__: 'readonly',
+        __IS_DEV__: true,
     },
     extends: ['plugin:react/recommended', 'airbnb', 'plugin:storybook/recommended'],
     parser: '@typescript-eslint/parser',
@@ -83,6 +83,7 @@ module.exports = {
         'arrow-body-style': 'off',
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error',
+        'no-param-reassign': 'off',
     },
     overrides: [
         {

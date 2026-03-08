@@ -27,6 +27,7 @@
   },
   "include": [
     "./src",
-    "./config"
+    "./config",
+    "node_modules/storybook/dist/manager/globals-runtime.js"
   ]
 }

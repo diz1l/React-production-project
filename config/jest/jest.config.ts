@@ -37,6 +37,9 @@ function createConfig() {
             '^(app|pages|widgets|shared|entities|features)/(.*)$': '<rootDir>/src/$1/$2',
             '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
         },
+        globals: {
+            __IS_DEV__: true,
+        },
         // ...rest of the commented options...
     };
 }
