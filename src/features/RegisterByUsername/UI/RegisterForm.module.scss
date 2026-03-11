@@ -1,0 +1,154 @@
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-l);
+  width: 420px;
+  padding: var(--spacing-xl) var(--spacing-l);
+}
+
+// ── Avatar ────────────────────────────────────────────────────
+
+.avatarWrap {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--color-secondary) 40%, transparent);
+}
+
+.avatarIcon {
+  width: 30px;
+  height: 30px;
+  color: #fff;
+}
+
+// ── Header ────────────────────────────────────────────────────
+
+.header {
+  text-align: center;
+}
+
+.title {
+  margin: 0 0 var(--spacing-xs);
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.subtitle {
+  margin: 0;
+  font-size: var(--font-size-s);
+  color: var(--color-text-secondary);
+}
+
+// ── Fields ────────────────────────────────────────────────────
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+  width: 100%;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-m);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.label {
+  font-size: var(--font-size-s);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  letter-spacing: 0.01em;
+}
+
+// ── Input ─────────────────────────────────────────────────────
+
+.inputWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 12px;
+  width: 18px;
+  height: 18px;
+  color: var(--color-text-tertiary);
+  pointer-events: none;
+  flex-shrink: 0;
+  transition: color var(--theme-trans);
+}
+
+.input {
+  width: 100%;
+  padding: 11px var(--spacing-m) 11px 40px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-m);
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-m);
+  outline: none;
+  transition:
+    border-color var(--theme-trans),
+    background-color var(--theme-trans),
+    box-shadow var(--theme-trans);
+
+  &::placeholder {
+    color: var(--color-text-tertiary);
+  }
+
+  &:focus {
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-secondary) 15%, transparent);
+  }
+
+  &:focus + .inputIcon,
+  .inputWrap:focus-within .inputIcon {
+    color: var(--color-secondary);
+  }
+}
+
+// ── Submit ────────────────────────────────────────────────────
+
+.submitBtn {
+  width: 100%;
+  justify-content: center;
+  padding: 13px;
+  font-size: var(--font-size-m);
+  font-weight: 600;
+  border-radius: var(--radius-m);
+  letter-spacing: 0.02em;
+}
+
+// ── Footer ────────────────────────────────────────────────────
+
+.footer {
+  margin: 0;
+  font-size: var(--font-size-s);
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+.footerLink {
+  color: var(--color-primary);
+  font-weight: 600;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

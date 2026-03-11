@@ -21,10 +21,11 @@
 }
 
 .content {
-  width: min(90vw, 500px);
+  width: fit-content;
+  max-width: min(90vw, 480px);
   max-height: 85vh;
   overflow-y: auto;
-  padding: var(--spacing-xl);
+  padding: 0;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-l);

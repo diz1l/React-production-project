@@ -7,6 +7,7 @@ import logoOfWeb from 'shared/img/logoOfWeb.png';
 import { Modal } from 'shared/UI/Modal';
 import { ButtonEl } from 'shared/UI';
 import { ButtonTheme } from 'shared/UI/Button/Ui/ButtonEl';
+import { LoginForm } from 'features/AuthByUsername';
 import classes from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -45,7 +46,7 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
             </ButtonEl>
 
             <Modal isOpen={isAuthModal} isClose={toggleAuthModal}>
-                <h1>Modal</h1>
+                <LoginForm />
             </Modal>
 
             <div className={classes.utilities}>
