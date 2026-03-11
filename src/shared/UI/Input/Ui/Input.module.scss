@@ -1,0 +1,66 @@
+.inputWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.icon {
+  position: absolute;
+  left: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  color: var(--color-text-tertiary);
+  pointer-events: none;
+  transition: color var(--theme-trans);
+}
+
+.input {
+  width: 100%;
+  padding: 11px var(--spacing-m);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-m);
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-m);
+  outline: none;
+  transition:
+    border-color var(--theme-trans),
+    background-color var(--theme-trans),
+    box-shadow var(--theme-trans);
+
+  &::placeholder {
+    color: var(--color-text-tertiary);
+  }
+}
+
+// ── Variants ──────────────────────────────────────────────────
+
+.outline:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 15%, transparent);
+}
+
+.ghost {
+  border-color: transparent;
+  background: var(--color-surface-hover);
+}
+
+.ghost:focus {
+  border-color: var(--color-primary);
+  background: var(--color-surface);
+}
+
+// ── With icon ─────────────────────────────────────────────────
+
+.withIcon {
+  padding-left: 40px;
+}
+
+.inputWrap:focus-within .icon {
+  color: var(--color-primary);
+}

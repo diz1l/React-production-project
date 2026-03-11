@@ -73,55 +73,6 @@
   letter-spacing: 0.01em;
 }
 
-// ── Input ─────────────────────────────────────────────────────
-
-.inputWrap {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.inputIcon {
-  position: absolute;
-  left: 12px;
-  width: 18px;
-  height: 18px;
-  color: var(--color-text-tertiary);
-  pointer-events: none;
-  flex-shrink: 0;
-  transition: color var(--theme-trans);
-}
-
-.input {
-  width: 100%;
-  padding: 11px var(--spacing-m) 11px 40px;
-  border: 1.5px solid var(--color-border);
-  border-radius: var(--radius-m);
-  background: var(--color-surface);
-  color: var(--color-text-primary);
-  font-family: var(--font-family-main);
-  font-size: var(--font-size-m);
-  outline: none;
-  transition:
-    border-color var(--theme-trans),
-    background-color var(--theme-trans),
-    box-shadow var(--theme-trans);
-
-  &::placeholder {
-    color: var(--color-text-tertiary);
-  }
-
-  &:focus {
-    border-color: var(--color-secondary);
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-secondary) 15%, transparent);
-  }
-
-  &:focus + .inputIcon,
-  .inputWrap:focus-within .inputIcon {
-    color: var(--color-secondary);
-  }
-}
-
 // ── Submit ────────────────────────────────────────────────────
 
 .submitBtn {

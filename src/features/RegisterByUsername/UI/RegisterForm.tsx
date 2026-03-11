@@ -2,11 +2,40 @@ import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ButtonEl } from 'shared/UI';
 import { ButtonTheme } from 'shared/UI/Button/Ui/ButtonEl';
+import { InputEl } from 'shared/UI/Input';
 import classes from './RegisterForm.module.scss';
 
 interface RegisterFormProps {
     className?: string;
 }
+
+const UserIcon = (
+    <svg viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="8" r="4" stroke="currentColor" strokeWidth="1.6" />
+        <path d="M4 20c0-4 3.582-7 8-7s8 3 8 7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+);
+
+const EmailIcon = (
+    <svg viewBox="0 0 24 24" fill="none">
+        <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="1.6" />
+        <path d="M3 7l9 6 9-6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+);
+
+const LockIcon = (
+    <svg viewBox="0 0 24 24" fill="none">
+        <rect x="5" y="11" width="14" height="10" rx="2" stroke="currentColor" strokeWidth="1.6" />
+        <path d="M8 11V7a4 4 0 1 1 8 0v4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+);
+
+const CheckIcon = (
+    <svg viewBox="0 0 24 24" fill="none">
+        <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+        <rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" strokeWidth="1.6" />
+    </svg>
+);
 
 export const RegisterForm: FC<RegisterFormProps> = ({ className }) => {
     const { t } = useTranslation('translation', { useSuspense: false });
@@ -31,43 +60,26 @@ export const RegisterForm: FC<RegisterFormProps> = ({ className }) => {
                     <label className={classes.label} htmlFor="register-username">
                         {t('Username')}
                     </label>
-                    <div className={classes.inputWrap}>
-                        <svg className={classes.inputIcon} viewBox="0 0 24 24" fill="none">
-                            <circle cx="12" cy="8" r="4" stroke="currentColor" strokeWidth="1.6" />
-                            <path
-                                d="M4 20c0-4 3.582-7 8-7s8 3 8 7"
-                                stroke="currentColor"
-                                strokeWidth="1.6"
-                                strokeLinecap="round"
-                            />
-                        </svg>
-                        <input
-                            id="register-username"
-                            className={classes.input}
-                            type="text"
-                            placeholder={t('Choose a username')}
-                            readOnly
-                        />
-                    </div>
+                    <InputEl
+                        id="register-username"
+                        type="text"
+                        placeholder={t('Choose a username')}
+                        icon={UserIcon}
+                        readOnly
+                    />
                 </div>
 
                 <div className={classes.field}>
                     <label className={classes.label} htmlFor="register-email">
                         {t('Email')}
                     </label>
-                    <div className={classes.inputWrap}>
-                        <svg className={classes.inputIcon} viewBox="0 0 24 24" fill="none">
-                            <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="1.6" />
-                            <path d="M3 7l9 6 9-6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-                        </svg>
-                        <input
-                            id="register-email"
-                            className={classes.input}
-                            type="email"
-                            placeholder={t('Enter your email')}
-                            readOnly
-                        />
-                    </div>
+                    <InputEl
+                        id="register-email"
+                        type="email"
+                        placeholder={t('Enter your email')}
+                        icon={EmailIcon}
+                        readOnly
+                    />
                 </div>
 
                 <div className={classes.row}>
@@ -75,65 +87,26 @@ export const RegisterForm: FC<RegisterFormProps> = ({ className }) => {
                         <label className={classes.label} htmlFor="register-password">
                             {t('Password')}
                         </label>
-                        <div className={classes.inputWrap}>
-                            <svg className={classes.inputIcon} viewBox="0 0 24 24" fill="none">
-                                <rect
-                                    x="5"
-                                    y="11"
-                                    width="14"
-                                    height="10"
-                                    rx="2"
-                                    stroke="currentColor"
-                                    strokeWidth="1.6"
-                                />
-                                <path
-                                    d="M8 11V7a4 4 0 1 1 8 0v4"
-                                    stroke="currentColor"
-                                    strokeWidth="1.6"
-                                    strokeLinecap="round"
-                                />
-                            </svg>
-                            <input
-                                id="register-password"
-                                className={classes.input}
-                                type="password"
-                                placeholder={t('Create password')}
-                                readOnly
-                            />
-                        </div>
+                        <InputEl
+                            id="register-password"
+                            type="password"
+                            placeholder={t('Create password')}
+                            icon={LockIcon}
+                            readOnly
+                        />
                     </div>
 
                     <div className={classes.field}>
                         <label className={classes.label} htmlFor="register-confirm">
                             {t('Confirm')}
                         </label>
-                        <div className={classes.inputWrap}>
-                            <svg className={classes.inputIcon} viewBox="0 0 24 24" fill="none">
-                                <path
-                                    d="M9 12l2 2 4-4"
-                                    stroke="currentColor"
-                                    strokeWidth="1.6"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                />
-                                <rect
-                                    x="3"
-                                    y="3"
-                                    width="18"
-                                    height="18"
-                                    rx="3"
-                                    stroke="currentColor"
-                                    strokeWidth="1.6"
-                                />
-                            </svg>
-                            <input
-                                id="register-confirm"
-                                className={classes.input}
-                                type="password"
-                                placeholder={t('Repeat password')}
-                                readOnly
-                            />
-                        </div>
+                        <InputEl
+                            id="register-confirm"
+                            type="password"
+                            placeholder={t('Repeat password')}
+                            icon={CheckIcon}
+                            readOnly
+                        />
                     </div>
                 </div>
             </div>
