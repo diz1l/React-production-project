@@ -6,7 +6,11 @@ export function buildResolvers(options: BuildOptions): ResolveOptions {
     return {
         extensions: ['.tsx', '.ts', '.js'],
         preferAbsolute: true,
-        modules: [options.paths.src, 'node_modules'],
+        modules: [
+            options.paths.src,
+            path.resolve(__dirname, '..', '..', 'node_modules'),
+            'node_modules',
+        ],
         mainFiles: ['index'],
         alias: {
             '@': options.paths.src,

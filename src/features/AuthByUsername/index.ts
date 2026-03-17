@@ -1,1 +1,1 @@
-export { LoginForm } from './UI/LoginForm';
+export { LoginModal } from './UI/LoginModal/LoginModal';

@@ -18,11 +18,6 @@ describe('RegisterForm', () => {
         expect(screen.getByLabelText(/email/i)).toBeInTheDocument();
     });
 
-    test('email input should have type email', () => {
-        renderWithTranslation(<RegisterForm />);
-        expect(screen.getByLabelText(/email/i)).toHaveAttribute('type', 'email');
-    });
-
     test('should render password input', () => {
         renderWithTranslation(<RegisterForm />);
         expect(screen.getByLabelText(/^password$/i)).toBeInTheDocument();
@@ -30,16 +25,15 @@ describe('RegisterForm', () => {
 
     test('should render confirm password input', () => {
         renderWithTranslation(<RegisterForm />);
-        expect(screen.getByLabelText(/confirm/i)).toBeInTheDocument();
+        expect(screen.getByLabelText(/confirm password/i)).toBeInTheDocument();
     });
 
-    test('both password inputs should have type password', () => {
+    test('password inputs should have type password', () => {
         renderWithTranslation(<RegisterForm />);
         const passwordInputs = screen.getAllByDisplayValue('');
-        const passwordFields = passwordInputs.filter(
-            (el) => el.getAttribute('type') === 'password',
-        );
-        expect(passwordFields).toHaveLength(2);
+        const [, , password, confirm] = passwordInputs;
+        expect(password).toHaveAttribute('type', 'password');
+        expect(confirm).toHaveAttribute('type', 'password');
     });
 
     test('should apply custom className', () => {

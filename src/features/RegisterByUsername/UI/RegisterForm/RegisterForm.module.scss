@@ -1,4 +1,4 @@
-.loginForm {
+.registerForm {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -60,27 +60,11 @@
   gap: var(--spacing-xs);
 }
 
-.labelRow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .label {
   font-size: var(--font-size-s);
   font-weight: 600;
   color: var(--color-text-primary);
   letter-spacing: 0.01em;
-}
-
-.forgotLink {
-  font-size: var(--font-size-s);
-  color: var(--color-primary);
-  cursor: pointer;
-
-  &:hover {
-    text-decoration: underline;
-  }
 }
 
 // ── Submit ────────────────────────────────────────────────────

@@ -4,10 +4,9 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib';
 import { Theme, useTheme } from 'app/providers/ThemeProvider';
 import logoOfWeb from 'shared/img/logoOfWeb.png';
-import { Modal } from 'shared/UI/Modal';
 import { ButtonEl } from 'shared/UI';
 import { ButtonTheme } from 'shared/UI/Button/Ui/ButtonEl';
-import { LoginForm } from 'features/AuthByUsername';
+import { LoginModal } from 'features/AuthByUsername';
 import classes from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -45,9 +44,7 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
                 {t('Login')}
             </ButtonEl>
 
-            <Modal isOpen={isAuthModal} isClose={toggleAuthModal}>
-                <LoginForm />
-            </Modal>
+            <LoginModal isOpen={isAuthModal} isClose={toggleAuthModal} />
 
             <div className={classes.utilities}>
                 <ButtonEl

@@ -1,1 +1,1 @@
-export { RegisterForm } from './UI/RegisterForm';
+export { RegisterModal } from './UI/RegisterModal/RegisterModal';

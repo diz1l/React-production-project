@@ -1,9 +1,9 @@
-.registerForm {
+.loginForm {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--spacing-l);
-  width: 420px;
+  width: 380px;
   padding: var(--spacing-xl) var(--spacing-l);
 }
 
@@ -13,11 +13,11 @@
   width: 64px;
   height: 64px;
   border-radius: var(--radius-full);
-  background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 20px color-mix(in srgb, var(--color-secondary) 40%, transparent);
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--color-primary) 40%, transparent);
 }
 
 .avatarIcon {
@@ -54,16 +54,16 @@
   width: 100%;
 }
 
-.row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-m);
-}
-
 .field {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xs);
+}
+
+.labelRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .label {
@@ -71,6 +71,53 @@
   font-weight: 600;
   color: var(--color-text-primary);
   letter-spacing: 0.01em;
+}
+
+.forgotLink {
+  font-size: var(--font-size-s);
+  color: var(--color-primary);
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// ── Password toggle ───────────────────────────────────────────
+
+.passwordWrap {
+  position: relative;
+}
+
+.togglePassword {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-s);
+  background: transparent;
+  color: var(--color-text-tertiary);
+  cursor: pointer;
+  transition:
+    color var(--theme-trans),
+    background-color var(--theme-trans);
+
+  &:hover {
+    color: var(--color-text-primary);
+    background: var(--color-surface-hover);
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 // ── Submit ────────────────────────────────────────────────────
