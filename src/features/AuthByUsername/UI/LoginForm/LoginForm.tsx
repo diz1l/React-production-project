@@ -1,9 +1,16 @@
-import { FC, useState } from 'react';
+import {
+ FC, memo, useCallback, useState,
+} from 'react';
 import { useTranslation } from 'react-i18next';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 import { ButtonEl } from 'shared/UI';
 import { ButtonTheme } from 'shared/UI/Button/Ui/ButtonEl';
+import { Text, TextTheme } from 'shared/UI/Text/Text';
 import { InputEl } from 'shared/UI/Input';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginByUserName } from '../../model/services/loginByUserName';
+import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
+import { loginActions } from '../../model/slice/loginSlice';
 import { UserIcon } from './components/Icon/UserIcon';
 import { LockIcon } from './components/Icon/LockIcon';
 import { LoginAvatar } from './components/LoginAvatar/LoginAvatar';
@@ -15,14 +22,31 @@ interface LoginFormProps {
     className?: string;
 }
 
-export const LoginForm: FC<LoginFormProps> = ({ className }) => {
+export const LoginForm = memo(({ className }: LoginFormProps) => {
     const { t } = useTranslation('translation', { useSuspense: false });
     const [showPassword, setShowPassword] = useState(false);
-
     const inputType = showPassword ? 'text' : 'password';
+
+    const dispatch = useDispatch();
+    const loginForm = useSelector(getLoginState);
+
+    const onChangeUserName = useCallback((value: string) => {
+        dispatch(loginActions.setUsername(value));
+    }, [dispatch]);
+
+    const onChangePassword = useCallback((value: string) => {
+        dispatch(loginActions.setPassword(value));
+    }, [dispatch]);
+
+    const onLoginClick = useCallback(() => {
+        dispatch(loginByUserName({ userName: loginForm.userName, password: loginForm.password }));
+    }, [dispatch, loginForm.userName, loginForm.password]);
 
     return (
         <div className={[classes.loginForm, className].filter(Boolean).join(' ')}>
+
+            {loginForm.error && <Text text={loginForm.error} theme={TextTheme.ERROR} />}
+
             <LoginAvatar />
             <LoginHeader />
 
@@ -36,6 +60,8 @@ export const LoginForm: FC<LoginFormProps> = ({ className }) => {
                         type="text"
                         placeholder={t('Enter your username')}
                         icon={UserIcon}
+                        onChange={onChangeUserName}
+                        value={loginForm.userName}
                     />
                 </div>
 
@@ -52,6 +78,8 @@ export const LoginForm: FC<LoginFormProps> = ({ className }) => {
                             type={inputType}
                             placeholder={t('Enter your password')}
                             icon={LockIcon}
+                            onChange={onChangePassword}
+                            value={loginForm.password}
                         />
                         <button
                             type="button"
@@ -69,6 +97,8 @@ export const LoginForm: FC<LoginFormProps> = ({ className }) => {
                 className={classes.submitBtn}
                 theme={ButtonTheme.PRIMARY}
                 type="button"
+                onClick={onLoginClick}
+                disabled={loginForm?.isLoading}
             >
                 {t('Sign in')}
             </ButtonEl>
@@ -76,4 +106,4 @@ export const LoginForm: FC<LoginFormProps> = ({ className }) => {
             <LoginFooter />
         </div>
     );
-};
+});

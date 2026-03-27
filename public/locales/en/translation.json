@@ -33,5 +33,6 @@
     "Create password": "Create password",
     "Confirm": "Confirm",
     "Repeat password": "Repeat password",
-    "Already have an account?": "Already have an account?"
+    "Already have an account?": "Already have an account?",
+    "Вы ввели не правильный логин или пароль": "Incorrect username or password"
 }

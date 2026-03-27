@@ -40,3 +40,25 @@ OutlineDark.args = {
     theme: ButtonTheme.OUTLINE,
 };
 OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+    children: 'Sign in',
+    theme: ButtonTheme.PRIMARY,
+    disabled: true,
+};
+
+export const DisabledDark = Template.bind({});
+DisabledDark.args = {
+    children: 'Sign in',
+    theme: ButtonTheme.PRIMARY,
+    disabled: true,
+};
+DisabledDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const DisabledOutline = Template.bind({});
+DisabledOutline.args = {
+    children: 'Sign in',
+    theme: ButtonTheme.OUTLINE,
+    disabled: true,
+};

@@ -2,7 +2,12 @@
   "permissions": {
     "allow": [
       "Bash(echo:*)",
-      "Bash(printf:*)"
+      "Bash(printf:*)",
+      "Bash(git config:*)",
+      "Bash(npm run:*)",
+      "Bash(grep -r \"__API__\\\\|BASE_URL\\\\|API_URL\\\\|process\\\\.env\" src/ config/ --include=*.ts --include=*.tsx --include=*.js -l)",
+      "Bash(npx jest:*)",
+      "Bash(\"E:/ulbi/React-production-project/src/features/AuthByUsername/model/services/loginByUserName.test.ts\")"
     ]
   }
 }

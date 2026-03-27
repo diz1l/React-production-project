@@ -1,5 +1,6 @@
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import webpack from 'webpack';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -74,6 +75,12 @@ const config = {
                 'sass-loader',
             ],
         });
+
+        cfg.plugins = cfg.plugins || [];
+        cfg.plugins.push(new webpack.DefinePlugin({
+            __IS_DEV__: JSON.stringify(true),
+            __API__: JSON.stringify('http://localhost:8000'),
+        }));
 
         return cfg;
     },
