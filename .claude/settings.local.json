@@ -7,7 +7,11 @@
       "Bash(npm run:*)",
       "Bash(grep -r \"__API__\\\\|BASE_URL\\\\|API_URL\\\\|process\\\\.env\" src/ config/ --include=*.ts --include=*.tsx --include=*.js -l)",
       "Bash(npx jest:*)",
-      "Bash(\"E:/ulbi/React-production-project/src/features/AuthByUsername/model/services/loginByUserName.test.ts\")"
+      "Bash(\"E:/ulbi/React-production-project/src/features/AuthByUsername/model/services/loginByUserName.test.ts\")",
+      "Bash(npx eslint:*)",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(json.dumps\\(d.get\\(''''jest'''',{}\\), indent=2\\)\\)\")",
+      "Bash(npm install *)",
+      "Bash(npx storybook *)"
     ]
   }
 }

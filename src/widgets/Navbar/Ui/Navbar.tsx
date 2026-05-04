@@ -1,12 +1,14 @@
 import { FC, useCallback, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { getAuthUserData, userActions } from 'entities/User';
+import { LoginModal } from 'features/AuthByUsername';
 import { classNames } from 'shared/lib';
 import { Theme, useTheme } from 'app/providers/ThemeProvider';
-import logoOfWeb from 'shared/img/logoOfWeb.png';
 import { ButtonEl } from 'shared/UI';
 import { ButtonTheme } from 'shared/UI/Button/Ui/ButtonEl';
-import { LoginModal } from 'features/AuthByUsername';
+import logoOfWeb from 'shared/img/logoOfWeb.png';
 import classes from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -14,17 +16,23 @@ interface NavbarProps {
 }
 
 export const Navbar: FC<NavbarProps> = ({ className }) => {
-    const { theme, toggleTheme } = useTheme();
     const { t, i18n } = useTranslation();
+    const { theme, toggleTheme } = useTheme();
+    const dispatch = useDispatch();
+    const authData = useSelector(getAuthUserData);
     const [isAuthModal, setIsAuthModal] = useState(false);
 
-    const toggleLanguage = () => {
-        i18n.changeLanguage(i18n.language === 'en' ? 'ru' : 'en');
-    };
+    const toggleLanguage = useCallback(() => {
+        i18n.changeLanguage(i18n.language === 'en' ? 'ru' : 'en').catch(() => {});
+    }, [i18n]);
 
     const toggleAuthModal = useCallback(() => {
         setIsAuthModal((prev) => !prev);
     }, []);
+
+    const onLogout = useCallback(() => {
+        dispatch(userActions.logout());
+    }, [dispatch]);
 
     return (
         <header className={classNames(classes.navbar, {}, [className])}>
@@ -36,15 +44,18 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
 
             <div className={classes.spacer} />
 
-            <ButtonEl
-                theme={ButtonTheme.OUTLINE}
-                type="button"
-                onClick={toggleAuthModal}
-            >
-                {t('Login')}
-            </ButtonEl>
-
-            <LoginModal isOpen={isAuthModal} isClose={toggleAuthModal} />
+            {authData ? (
+                <ButtonEl theme={ButtonTheme.OUTLINE} type="button" onClick={onLogout}>
+                    {t('Log-out')}
+                </ButtonEl>
+            ) : (
+                <>
+                    <ButtonEl theme={ButtonTheme.OUTLINE} type="button" onClick={toggleAuthModal}>
+                        {t('Login')}
+                    </ButtonEl>
+                    <LoginModal isOpen={isAuthModal} isClose={toggleAuthModal} />
+                </>
+            )}
 
             <div className={classes.utilities}>
                 <ButtonEl
