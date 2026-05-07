@@ -5,7 +5,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { StyleDecorator } from 'shared/config/storybook/StyleDecorator/StyleDecorator';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Theme } from 'app/providers/ThemeProvider/lib/ThemeContext';
-import { LoginForm } from './LoginForm';
+import LoginForm from 'features/AuthByUsername/UI/LoginForm/LoginForm';
 
 export default {
     title: 'features/LoginForm',

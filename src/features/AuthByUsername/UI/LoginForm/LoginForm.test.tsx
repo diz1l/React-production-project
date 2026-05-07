@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { renderWithTranslation } from 'shared/tests';
-import { LoginForm } from './LoginForm';
+import LoginForm from 'features/AuthByUsername/UI/LoginForm/LoginForm';
 
 describe('LoginForm', () => {
     test('should render login form with submit button', () => {
